@@ -88,8 +88,8 @@ export default function PropertyDetails() {
                 <span>Market Average Price:</span>
                 <strong>₹{property.insights.avgLocalPrice.toLocaleString()}/gajam</strong>
                 {property.priceGajam > property.insights.avgLocalPrice ? 
-                  <span className="text-warning text-sm ml-2">(13% above market)</span> : 
-                  <span className="text-success text-sm ml-2">(Great Deal)</span>}
+                  <span className="text-warning text-sm" style={{ marginLeft: '0.5rem' }}>(13% above market)</span> : 
+                  <span className="text-success text-sm" style={{ marginLeft: '0.5rem' }}>(Great Deal)</span>}
               </li>
               <li>
                 <span>Road Access:</span>
