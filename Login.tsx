@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth, type UserRole } from '../context/AuthContext';
+import { useAuth, type UserRole } from './AuthContext';
 import { ShieldCheck, Mail, Smartphone, ArrowRight } from 'lucide-react';
 import './Login.css';
 
@@ -11,6 +11,8 @@ export default function Login() {
   const [inputValue, setInputValue] = useState('');
   const [step, setStep] = useState<'input' | 'otp' | 'password'>('input');
   const [role, setRole] = useState<UserRole>('buyer');
+  const [otp, setOtp] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSendOtp = (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,7 +73,7 @@ export default function Login() {
 
             <div className="input-group mb-4">
               <label className="input-label">I want to...</label>
-              <select className="input-field" value={role || 'buyer'} onChange={(e) => setRole(e.target.value as UserRole)}>
+              <select className="input-field" value={role} onChange={(e) => setRole(e.target.value as UserRole)}>
                 <option value="buyer">Buy Land</option>
                 <option value="seller">Sell Land</option>
                 <option value="admin">Admin Panel</option>
@@ -89,7 +91,7 @@ export default function Login() {
             <p className="text-center mb-3">OTP sent to <strong>{inputValue}</strong></p>
             <div className="input-group mb-4">
               <label className="input-label">Enter 6-digit OTP</label>
-              <input type="text" className="input-field large text-center tracking-widest" placeholder="• • • • • •" required />
+              <input type="text" className="input-field large text-center tracking-widest" placeholder="• • • • • •" value={otp} onChange={(e) => setOtp(e.target.value)} required />
             </div>
             <button type="submit" className="btn btn-primary btn-large w-full">Verify OTP</button>
           </form>
@@ -100,7 +102,7 @@ export default function Login() {
             <p className="text-center mb-3">Setup your permanent password</p>
             <div className="input-group mb-4">
               <label className="input-label">New Password</label>
-              <input type="password" className="input-field large" required />
+              <input type="password" className="input-field large" value={password} onChange={(e) => setPassword(e.target.value)} required />
             </div>
             <button type="submit" className="btn btn-success btn-large w-full">Complete Setup</button>
           </form>

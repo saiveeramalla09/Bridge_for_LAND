@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import { LanguageProvider } from './context/LanguageContext';
-import Header from './components/Header';
-import Landing from './pages/Landing';
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import UploadLand from './pages/UploadLand';
-import BrowseMap from './pages/BrowseMap';
-import PropertyDetails from './pages/PropertyDetails';
-import AIAssistant from './components/AIAssistant';
+import { AuthProvider, useAuth } from './AuthContext';
+import { LanguageProvider } from './LanguageContext';
+import Header from './Header';
+import Landing from './Landing';
+import Login from './Login';
+import Dashboard from './Dashboard';
+import UploadLand from './UploadLand';
+import BrowseMap from './BrowseMap';
+import PropertyDetails from './PropertyDetails';
+import AIAssistant from './AIAssistant';
 import './App.css';
 
 // Simple protected route helper
