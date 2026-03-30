@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UploadCloud, CheckCircle, AlertTriangle } from 'lucide-react';
 import './UploadLand.css';
@@ -14,26 +14,18 @@ export default function UploadLand() {
     pricePerGajam: '',
   });
 
-  const [converted, setConverted] = useState({
-    sqYards: 0,
-    acres: 0,
-    totalPrice: 0,
-  });
-
   const [uploadStatus, setUploadStatus] = useState<'idle' | 'uploading' | 'verified' | 'review'>('idle');
 
   // Part 7: Price & Unit System Auto Conversion Logic
-  useEffect(() => {
+  // 1 Gajam = 1 Sq Yard; 1 Acre = 4840 Sq Yards
+  const converted = useMemo(() => {
     const gajam = parseFloat(formData.gajam) || 0;
     const pricePerGajam = parseFloat(formData.pricePerGajam) || 0;
-    
-    // 1 Gajam = 1 Sq Yard
-    // 1 Acre = 4840 Sq Yards
-    setConverted({
+    return {
       sqYards: gajam,
       acres: Number((gajam / 4840).toFixed(4)),
       totalPrice: gajam * pricePerGajam,
-    });
+    };
   }, [formData.gajam, formData.pricePerGajam]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {

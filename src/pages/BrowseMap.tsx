@@ -5,9 +5,9 @@ import './BrowseMap.css';
 
 // Mock Data for properties
 const MOCK_PROPERTIES = [
-  { id: 1, title: 'Agricultural Land', size: '500 Gajam', price: '₹12,50,000', location: 'Warangal Highway', verified: true, coords: { x: 30, y: 40 } },
-  { id: 2, title: 'Residential Plot', size: '200 Gajam', price: '₹8,00,000', location: 'Shamshabad', verified: true, coords: { x: 60, y: 20 } },
-  { id: 3, title: 'Commercial Space', size: '1000 Gajam', price: '₹50,00,000', location: 'Gachibowli', verified: false, coords: { x: 45, y: 70 } },
+  { id: 1, title: 'Agricultural Land', sizeGajam: 500, priceInr: 1250000, location: 'Warangal Highway', verified: true, coords: { x: 30, y: 40 } },
+  { id: 2, title: 'Residential Plot', sizeGajam: 200, priceInr: 800000, location: 'Shamshabad', verified: true, coords: { x: 60, y: 20 } },
+  { id: 3, title: 'Commercial Space', sizeGajam: 1000, priceInr: 5000000, location: 'Gachibowli', verified: false, coords: { x: 45, y: 70 } },
 ];
 
 export default function BrowseMap() {
@@ -62,11 +62,11 @@ export default function BrowseMap() {
               <div className="property-stats grid-2-col mb-4">
                 <div className="stat-box">
                   <span className="stat-label">Size</span>
-                  <strong>{selectedProperty.size}</strong>
+                  <strong>{selectedProperty.sizeGajam} Gajam</strong>
                 </div>
                 <div className="stat-box">
                   <span className="stat-label">Total Price</span>
-                  <strong className="text-primary">{selectedProperty.price}</strong>
+                  <strong className="text-primary">₹{selectedProperty.priceInr.toLocaleString('en-IN')}</strong>
                 </div>
               </div>
 

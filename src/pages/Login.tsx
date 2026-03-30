@@ -71,7 +71,7 @@ export default function Login() {
 
             <div className="input-group mb-4">
               <label className="input-label">I want to...</label>
-              <select className="input-field" value={role || 'buyer'} onChange={(e) => setRole(e.target.value as UserRole)}>
+              <select className="input-field" value={role ?? 'buyer'} onChange={(e) => setRole(e.target.value as UserRole)}>
                 <option value="buyer">Buy Land</option>
                 <option value="seller">Sell Land</option>
                 <option value="admin">Admin Panel</option>

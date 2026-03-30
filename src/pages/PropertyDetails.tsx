@@ -88,7 +88,7 @@ export default function PropertyDetails() {
                 <span>Market Average Price:</span>
                 <strong>₹{property.insights.avgLocalPrice.toLocaleString()}/gajam</strong>
                 {property.priceGajam > property.insights.avgLocalPrice ? 
-                  <span className="text-warning text-sm ml-2">(13% above market)</span> : 
+                  <span className="text-warning text-sm ml-2">({Math.round((property.priceGajam / property.insights.avgLocalPrice - 1) * 100)}% above market)</span> : 
                   <span className="text-success text-sm ml-2">(Great Deal)</span>}
               </li>
               <li>
