@@ -16,11 +16,11 @@ export default function Landing() {
             Buy and sell land directly. We verify the documents to ensure pure transparency. Your trust is our priority.
           </p>
           <div className="hero-actions gap-4">
-            <Link to="/buy" className="btn btn-primary btn-large mb-2">
+            <Link to="/browse" className="btn btn-primary btn-large mb-2">
               <Map size={20} />
               Browse Lands
             </Link>
-            <Link to="/sell" className="btn btn-secondary btn-large">
+            <Link to="/upload" className="btn btn-secondary btn-large">
               Sell Your Land
             </Link>
           </div>

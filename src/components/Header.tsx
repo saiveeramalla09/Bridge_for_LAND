@@ -15,8 +15,8 @@ export default function Header() {
         </Link>
         
         <nav className="desktop-nav">
-          <Link to="/buy" className="nav-link">{t('buyLand')}</Link>
-          <Link to="/sell" className="nav-link">{t('sellLand')}</Link>
+          <Link to="/browse" className="nav-link">{t('buyLand')}</Link>
+          <Link to="/upload" className="nav-link">{t('sellLand')}</Link>
           <Link to="/how-it-works" className="nav-link">{t('howItWorks')}</Link>
         </nav>
         
@@ -25,7 +25,7 @@ export default function Header() {
             <Globe size={18} className="text-muted" />
             <select 
               value={language} 
-              onChange={(e) => setLanguage(e.target.value as any)}
+              onChange={(e) => setLanguage(e.target.value as 'en' | 'te' | 'hi')}
               style={{ border: 'none', background: 'transparent', outline: 'none', cursor: 'pointer', color: 'var(--color-text-muted)', fontWeight: 600 }}
             >
               <option value="en">EN</option>
